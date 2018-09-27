@@ -7,6 +7,8 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>maven-demo1 Maven Webapp</name>
   <url>http://maven.apache.org</url>
+
+
   <dependencies>
   <dependency>
     <groupId>javax.servlet</groupId>
@@ -21,6 +23,27 @@
     </dependency>
   </dependencies>
   <build>
+<plugins>
+<plugin>
+
+    <groupId>org.apache.tomcat.maven</groupId>
+
+    <artifactId>tomcat7-maven-plugin</artifactId>
+
+    <version>2.2</version>
+
+    <configuration>                  
+
+        <url>http://localhost:8080/manager/text</url>
+
+        <server>TomcatServer</server>
+
+        <path>/maven-demo1</path>
+
+    </configuration>
+
+    </plugin>
+</plugins>
     <finalName>maven-demo1</finalName>
   </build>
 </project>
